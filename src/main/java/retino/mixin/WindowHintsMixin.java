@@ -1,6 +1,6 @@
 package retino.mixin;
 
-import net.minecraft.client.util.Window;
+import com.mojang.blaze3d.platform.Window;
 import org.lwjgl.glfw.GLFW;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,7 +12,7 @@ public abstract class WindowHintsMixin {
 	@Inject(
 		at = @At(
 			value = "INVOKE",
-			target = "Lorg/lwjgl/glfw/GLFW;glfwCreateWindow(IILjava/lang/CharSequence;JJ)J"
+			target = "Lcom/mojang/blaze3d/platform/Window;createWindow(Lcom/mojang/blaze3d/systems/GpuBackend;IILjava/lang/String;J)J"
 		),
 		method = "<init>"
 	)
